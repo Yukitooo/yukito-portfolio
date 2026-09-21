@@ -7,7 +7,7 @@
 
 <section id="work" class="section container" aria-labelledby="selected-work" use:reveal>
   <div class="visually-hidden" id="selected-work">Selected Work</div>
-  <SectionHeader number="01" title="My Personal Work" />
+  <SectionHeader number="01" title="My Personal Work" meta="01—04" />
   <div class="projects">
     {#each projects as project (project.slug)}
       <ProjectRow {project} />

@@ -7,9 +7,10 @@ export interface Project {
   summary: string;
   stack: string[];
   href: string;
+  repository?: string;
   external?: boolean;
   linkLabel: 'View case study' | 'View project' | 'View repository';
-  preview: 'inventory' | 'planner' | 'booking';
+  preview: 'inventory' | 'planner' | 'booking' | 'quiz';
 }
 
 export const projects: Project[] = [
@@ -36,6 +37,7 @@ export const projects: Project[] = [
       'A planning tool that turns large goals into smaller, actionable tasks through natural-language decomposition.',
     stack: ['SvelteKit', 'TypeScript', 'LangChain', 'Groq'],
     href: 'https://ai-powered-todo-delta.vercel.app/',
+    repository: 'https://github.com/Yukitooo/ai_powered_todo',
     external: true,
     linkLabel: 'View project',
     preview: 'planner'
@@ -53,5 +55,20 @@ export const projects: Project[] = [
     external: true,
     linkLabel: 'View repository',
     preview: 'booking'
+  },
+  {
+    number: '04',
+    slug: 'pokemon-personality-quiz',
+    title: 'Pokémon Personality Quiz',
+    subtitle: 'Interactive personality quiz',
+    label: 'React / Interactive application',
+    summary:
+      'A playful, responsive quiz that evaluates a series of answers and reveals a matching Pokémon personality type, tagline, and traits.',
+    stack: ['React', 'JavaScript', 'CSS', 'GitHub Pages'],
+    href: 'https://yukitooo.github.io/pokemonPersonalityQuiz-/',
+    repository: 'https://github.com/Yukitooo/pokemonPersonalityQuiz-',
+    external: true,
+    linkLabel: 'View project',
+    preview: 'quiz'
   }
 ];

@@ -33,12 +33,7 @@
   onpointerleave={() => (hovering = false)}
   onpointermove={handleMove}
 >
-  <a
-    href={project.external ? project.href : resolve('/work/sdv-asset-tracker')}
-    target={project.external ? '_blank' : undefined}
-    rel={project.external ? 'noreferrer' : undefined}
-    aria-label={`${project.title}: ${project.linkLabel.toLowerCase()}`}
-  >
+  <div class="row-content">
     <div class="number mono">{project.number}</div>
     <div class="main">
       <span class="eyebrow">{project.label}</span>
@@ -50,7 +45,26 @@
       <ul aria-label="Technologies">
         {#each project.stack as item (item)}<li>{item}</li>{/each}
       </ul>
-      <span class="view mono">{project.linkLabel} <b>↗</b></span>
+      <div class="project-actions">
+        <a
+          class="view mono"
+          href={project.external ? project.href : resolve('/work/sdv-asset-tracker')}
+          target={project.external ? '_blank' : undefined}
+          rel={project.external ? 'noreferrer' : undefined}
+          aria-label={`${project.title}: ${project.linkLabel.toLowerCase()}`}
+        >
+          {project.linkLabel} <b>↗</b>
+        </a>
+        {#if project.repository}
+          <a
+            class="view mono"
+            href={project.repository}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${project.title}: view source code`}>Source <b>↗</b></a
+          >
+        {/if}
+      </div>
     </div>
 
     <span
@@ -59,7 +73,7 @@
       style={`--cursor-x:${cursorX}px; --cursor-y:${cursorY}px`}
       aria-hidden="true">View ↗</span
     >
-  </a>
+  </div>
 
   <div
     class="floating-preview"
@@ -82,7 +96,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  a {
+  .row-content {
     position: relative;
     z-index: 1;
     display: grid;
@@ -96,7 +110,7 @@
       padding 260ms ease;
   }
 
-  a::before {
+  .row-content::before {
     position: absolute;
     z-index: -1;
     inset: 0 calc(var(--gutter) * -1);
@@ -106,11 +120,11 @@
     transition: opacity 260ms ease;
   }
 
-  a:hover {
+  .project-row:hover .row-content {
     color: var(--paper);
   }
 
-  a:hover::before {
+  .project-row:hover .row-content::before {
     opacity: 1;
   }
 
@@ -139,8 +153,8 @@
     transition: color 260ms ease;
   }
 
-  a:hover .main p,
-  a:hover .eyebrow {
+  .project-row:hover .main p,
+  .project-row:hover .eyebrow {
     color: rgba(244, 244, 240, 0.65);
   }
 
@@ -160,6 +174,19 @@
     text-align: right;
   }
 
+  .project-actions {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: flex-end;
+  }
+
+  .view {
+    width: max-content;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -176,7 +203,7 @@
     transition: transform 180ms ease;
   }
 
-  a:hover .view b {
+  .view:hover b {
     transform: translate(4px, -3px);
   }
 
@@ -203,7 +230,7 @@
   }
 
   @media (pointer: fine) and (min-width: 1000px) {
-    a:hover {
+    .project-row:hover {
       cursor: none;
     }
 
@@ -231,7 +258,7 @@
       display: none;
     }
 
-    a {
+    .row-content {
       grid-template-columns: 3rem 1.4fr 1fr;
     }
 
@@ -241,7 +268,7 @@
   }
 
   @media (max-width: 680px) {
-    a {
+    .row-content {
       grid-template-columns: 2rem 1fr;
       min-height: 0;
       padding: 1.75rem 0 2rem;
@@ -252,6 +279,10 @@
       align-items: flex-start;
       gap: 2rem;
       text-align: left;
+    }
+
+    .project-actions {
+      align-items: flex-start;
     }
 
     ul {

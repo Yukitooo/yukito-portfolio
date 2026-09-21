@@ -34,13 +34,24 @@
         <span>01</span><i></i><span>02</span><i></i><span>03</span><i></i>
       </div>
     </div>
-  {:else}
+  {:else if project.preview === 'booking'}
     <div class="booking visual">
       <div class="landscape"><i></i></div>
       <div class="booking-content">
         <span class="tiny">Travel details</span>
         <div class="date-grid"><i></i><i></i><i></i></div>
         <div class="book-button">Confirm booking</div>
+      </div>
+    </div>
+  {:else}
+    <div class="quiz visual">
+      <div class="quiz-progress"><i></i><i></i><i></i><i></i><i></i></div>
+      <span class="tiny">Question 04 / 10</span>
+      <strong>What sounds like your ideal adventure?</strong>
+      <div class="quiz-options">
+        <span><i>A</i>Explore somewhere new</span>
+        <span><i>B</i>Stay in and recharge</span>
+        <span><i>C</i>Compete with friends</span>
       </div>
     </div>
   {/if}
@@ -223,5 +234,66 @@
     font-size: 0.45rem;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .quiz {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .quiz-progress {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .quiz-progress i {
+    height: 2px;
+    background: var(--paper);
+    opacity: 0.25;
+  }
+
+  .quiz-progress i:nth-child(-n + 2) {
+    opacity: 1;
+  }
+
+  .quiz strong {
+    max-width: 18ch;
+    margin-top: 0.8rem;
+    font-size: clamp(0.8rem, 1.25vw, 1.15rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .quiz-options {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: auto;
+  }
+
+  .quiz-options span {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid rgba(244, 244, 240, 0.35);
+    font-size: 0.52rem;
+  }
+
+  .quiz-options i {
+    display: grid;
+    place-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.4rem;
+    font-style: normal;
   }
 </style>
