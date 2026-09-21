@@ -47,7 +47,7 @@
       </ul>
       <div class="project-actions">
         <a
-          class="view mono"
+          class="view primary-link mono"
           href={project.external ? project.href : resolve('/work/sdv-asset-tracker')}
           target={project.external ? '_blank' : undefined}
           rel={project.external ? 'noreferrer' : undefined}
@@ -57,7 +57,7 @@
         </a>
         {#if project.repository}
           <a
-            class="view mono"
+            class="view source-link mono"
             href={project.repository}
             target="_blank"
             rel="noreferrer"
@@ -175,8 +175,6 @@
   }
 
   .project-actions {
-    position: relative;
-    z-index: 4;
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
@@ -185,6 +183,23 @@
 
   .view {
     width: max-content;
+  }
+
+  .primary-link::before {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    content: '';
+  }
+
+  .primary-link:focus-visible::before {
+    outline: 2px solid currentColor;
+    outline-offset: -5px;
+  }
+
+  .source-link {
+    position: relative;
+    z-index: 2;
   }
 
   ul {
