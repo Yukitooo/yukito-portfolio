@@ -9,7 +9,7 @@
       <span>Software Developer</span>
     </div>
     <p class="intro">
-      Working across product development, QA, automation, AI, and full-stack applications.
+      Working across product development, QA, AI, and full-stack applications.
     </p>
   </div>
 
