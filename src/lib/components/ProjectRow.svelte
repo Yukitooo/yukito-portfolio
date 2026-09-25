@@ -112,7 +112,7 @@
 
   .row-header {
     display: grid;
-    grid-template-columns: minmax(3rem, 0.35fr) 1.65fr auto;
+    grid-template-columns: auto 1fr auto;
     gap: clamp(1rem, 3vw, 3rem);
     align-items: start;
     min-height: 4.5rem;
