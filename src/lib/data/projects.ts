@@ -74,13 +74,14 @@ export const projects: Project[] = [
     slug: 'sdv-website',
     title: 'Schola De Vita Website',
     subtitle: 'School website concept',
-    label: 'Website concept / Unpublished prototype',
+    label: 'Website concept / Prototype',
     summary:
       'A front-end website concept for Schola De Vita, presenting the school, academics, admissions, school life, and campus information in a structured layout.',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    href: 'https://github.com/Yukitooo/SDV_Website',
+    href: 'https://yukitooo.github.io/SDV_Website/',
+    repository: 'https://github.com/Yukitooo/SDV_Website',
     external: true,
-    linkLabel: 'View repository',
+    linkLabel: 'View project',
     screenshot: {
       src: '/work/sdv-website.jpg',
       alt: 'Schola De Vita website concept with school navigation, introductory copy, and a campus photograph'
@@ -91,13 +92,14 @@ export const projects: Project[] = [
     slug: 'fitpad-website',
     title: 'Fitpad Website',
     subtitle: 'Fitness website concept',
-    label: 'Website concept / Unpublished prototype',
+    label: 'Website concept / Prototype',
     summary:
       'A bold front-end concept for a fitness brand, organizing its training, classes, facilities, and community positioning into a focused landing page.',
     stack: ['HTML', 'CSS', 'JavaScript'],
-    href: 'https://github.com/Yukitooo/Fitpad-Website',
+    href: 'https://yukitooo.github.io/Fitpad-Website/',
+    repository: 'https://github.com/Yukitooo/Fitpad-Website',
     external: true,
-    linkLabel: 'View repository',
+    linkLabel: 'View project',
     screenshot: {
       src: '/work/fitpad-website.jpg',
       alt: 'Fitpad fitness website concept with bold campaign typography and a photograph of the gym location'
