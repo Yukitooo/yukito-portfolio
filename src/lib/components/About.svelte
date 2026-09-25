@@ -14,8 +14,8 @@
         I’m Zachary Brent Mayuga, a Software Developer based in Las Piñas, Philippines.
       </p>
       <p>
-        My work spans software development, QA, AI evaluation, frontend and backend
-        development, databases, and internal software systems.
+        My work spans software development, QA, AI evaluation, frontend and backend development,
+        databases, and internal software systems.
       </p>
       <p>
         I graduated from De La Salle University Manila with a Bachelor of Science in Computer

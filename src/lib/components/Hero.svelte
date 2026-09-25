@@ -8,9 +8,7 @@
       <span>Zachary Brent Mayuga</span>
       <span>Software Developer</span>
     </div>
-    <p class="intro">
-      Working across product development, QA, AI, and full-stack applications.
-    </p>
+    <p class="intro">Working across product development, QA, AI, and full-stack applications.</p>
   </div>
 
   <div class="hero-title-wrap" use:reveal={{ delay: 80 }}>
