@@ -10,7 +10,10 @@ export interface Project {
   repository?: string;
   external?: boolean;
   linkLabel: 'View case study' | 'View project' | 'View repository';
-  preview: 'inventory' | 'planner' | 'booking' | 'quiz';
+  screenshot: {
+    src: string;
+    alt: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -25,7 +28,10 @@ export const projects: Project[] = [
     stack: ['SvelteKit', 'Node.js', 'SQLite', 'Drizzle'],
     href: '/work/sdv-asset-tracker',
     linkLabel: 'View case study',
-    preview: 'inventory'
+    screenshot: {
+      src: '/work/sdv-asset-inventory.jpg',
+      alt: 'SDV Asset Tracker inventory dashboard showing asset totals, filters, and registered school assets'
+    }
   },
   {
     number: '02',
@@ -40,24 +46,13 @@ export const projects: Project[] = [
     repository: 'https://github.com/Yukitooo/ai_powered_todo',
     external: true,
     linkLabel: 'View project',
-    preview: 'planner'
+    screenshot: {
+      src: '/work/ai-powered-todo.jpg',
+      alt: 'AI-Powered To-Do interface showing a generated plan for making a banana cake'
+    }
   },
   {
     number: '03',
-    slug: 'wonderrush-tours',
-    title: 'WonderRush Tours',
-    subtitle: 'Tour booking platform',
-    label: 'Full-stack application',
-    summary:
-      'A typed tour booking workflow covering customer information, travel dates, package selection, and persistent data.',
-    stack: ['React', 'TypeScript', 'Vite', 'PocketBase'],
-    href: 'https://github.com/Yukitooo/WonderRush-Tours',
-    external: true,
-    linkLabel: 'View repository',
-    preview: 'booking'
-  },
-  {
-    number: '04',
     slug: 'pokemon-personality-quiz',
     title: 'Pokémon Personality Quiz',
     subtitle: 'Interactive personality quiz',
@@ -69,6 +64,43 @@ export const projects: Project[] = [
     repository: 'https://github.com/Yukitooo/pokemonPersonalityQuiz-',
     external: true,
     linkLabel: 'View project',
-    preview: 'quiz'
+    screenshot: {
+      src: '/work/pokemon-personality-quiz.jpg',
+      alt: 'Pokémon Personality Quiz landing page asking which Pokémon matches the user’s vibe'
+    }
+  },
+  {
+    number: '04',
+    slug: 'sdv-website',
+    title: 'Schola De Vita Website',
+    subtitle: 'School website concept',
+    label: 'Website concept / Unpublished prototype',
+    summary:
+      'A front-end website concept for Schola De Vita, presenting the school, academics, admissions, school life, and campus information in a structured layout.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    href: 'https://github.com/Yukitooo/SDV_Website',
+    external: true,
+    linkLabel: 'View repository',
+    screenshot: {
+      src: '/work/sdv-website.jpg',
+      alt: 'Schola De Vita website concept with school navigation, introductory copy, and a campus photograph'
+    }
+  },
+  {
+    number: '05',
+    slug: 'fitpad-website',
+    title: 'Fitpad Website',
+    subtitle: 'Fitness website concept',
+    label: 'Website concept / Unpublished prototype',
+    summary:
+      'A bold front-end concept for a fitness brand, organizing its training, classes, facilities, and community positioning into a focused landing page.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    href: 'https://github.com/Yukitooo/Fitpad-Website',
+    external: true,
+    linkLabel: 'View repository',
+    screenshot: {
+      src: '/work/fitpad-website.jpg',
+      alt: 'Fitpad fitness website concept with bold campaign typography and a photograph of the gym location'
+    }
   }
 ];
