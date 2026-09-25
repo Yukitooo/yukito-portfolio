@@ -283,8 +283,9 @@
     }
 
     .row-header ul {
-      grid-column: 2;
+      grid-column: 1 / -1;
       justify-content: flex-start;
+      margin-top: 0.5rem;
     }
 
     h3 {
